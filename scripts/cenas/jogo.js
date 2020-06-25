@@ -25,44 +25,52 @@ class Jogo {
 
   }
 
-  keyPressed(key){
+  keyPressed(key) {
     if (key === 'ArrowUp') {
       personagem.pula()
       console.log(personagem.pula())
       somDoPulo.play()
     }
   }
-  draw(){
-    
-  cenario.exibe()
-  cenario.move()
+  draw() {
 
-  pontuacao.exibe()
-  pontuacao.adicionarPontos()
+    cenario.exibe()
+    cenario.move()
 
-
-  personagem.exibe()
-  personagem.aplicaGravidade()
-  /**/
-
-  const inimigo = inimigos[this.inimigoAtual]
-  const inimigoVisivel = inimigo.x <= -inimigo.largura 
+    pontuacao.exibe()
+    pontuacao.adicionarPontos()
 
 
-  inimigo.exibe()
-  inimigo.move()
-  
-  if(inimigoVisivel){
+    personagem.exibe()
+    personagem.aplicaGravidade()
+    /**/
 
-    this.inimigoAtual++
-    if(this.inimigoAtual > 2){
-      this.inimigoAtual = 0
+    const inimigo = inimigos[this.inimigoAtual]
+    const inimigoVisivel = inimigo.x <= -inimigo.largura
+
+
+    inimigo.exibe()
+    inimigo.move()
+
+    if (inimigoVisivel) {
+
+      this.inimigoAtual++
+      if (this.inimigoAtual > 2) {
+        this.inimigoAtual = 0
+      }
+      //inimigo.velocidade = parseInt(random(20, 35))
+      inimigo.velocidade = startSpeed++
+      console.log(startSpeed)
     }
-    inimigo.velocidade = parseInt(random(10,30))
-  }
-  if(personagem.estaColidindo(inimigo)){
-    image(imagemGameOver, width/2 - 200, height/3)
-  }
+    if (personagem.estaColidindo(inimigo)) {
+      image(imagemGameOver, width / 2 - 200, height / 3)
+      somDoJogo.stop()
+      somMorri.play()
+      noLoop()
+      setTimeout(() => {
+        window.location.reload()
+      },3000 )
+    }
 
   }
 }

@@ -14,11 +14,13 @@ let telaInicial
 let botaoGerenciador
 let fonteTelaInicial
 let imagemTelaInicial
+let startSpeed = 20
 
 let cenario
 
 let somDoJogo
 let somDoPulo
+let somMorri
 
 let personagem
 

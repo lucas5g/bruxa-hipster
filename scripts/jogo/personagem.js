@@ -7,7 +7,7 @@ class Personagem extends Animacao {
 
     this.velocidadeDoPulo = 0
     this.gravidade = 6
-    this.alturaDoPulo = -50
+    this.alturaDoPulo = -60
     this.pulos = 0
 
 
@@ -16,7 +16,7 @@ class Personagem extends Animacao {
 
   pula() {
     //console.log(this.velocidadeDoPulo)
-    if (this.pulos < 2) {
+    if (this.pulos <= 2) {
       this.velocidadeDoPulo = this.alturaDoPulo
       this.pulos++
 

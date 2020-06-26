@@ -4,14 +4,17 @@ let imagemInimigo
 let imagemInimigoGrande
 let imagemInimigoVoador
 let imagemGameOver
+let imagemVida
 let pontuacao
 let jogo
+let fita
 
 //let inimigoAtual = 0
 let cenaAtual = 'telaInicial'
 let cenas
 let telaInicial
 let botaoGerenciador
+let vida
 let fonteTelaInicial
 let imagemTelaInicial
 let startSpeed = 20

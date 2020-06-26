@@ -18,7 +18,9 @@ function setup() {
   somDoJogo.loop()
 
 }
-
+function mouseClicked(){
+  jogo.mouseClicked()
+}
 function keyPressed() {
   jogo.keyPressed(key)
 
